@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--parent>
+        <artifactId>resteasy-jaxrs-all</artifactId>
+        <groupId>org.jboss.resteasy</groupId>
+        <version>6.3.0.Alpha1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent-->
+    <artifactId>resteasy-guice</artifactId>
+    <groupId>org.jboss.resteasy</groupId>
+    <version>6.2.4.Final-SNAPSHOT</version>
+    <name>RESTEasy Guice</name>
+    <description/>
+
+    <properties>
+        <resteasy.version>6.2.4.Final</resteasy.version>
+        <guice.version>7.0.0</guice.version>
+        <guava.version>30.1-jre</guava.version>
+        <javaeeapi.version>8.0.0</javaeeapi.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guice.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-core-spi</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-client</artifactId>
+            <version>${resteasy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-netty4</artifactId>
+            <version>${resteasy.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging</artifactId>
+            <version>3.5.3.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging-annotations</artifactId>
+            <version>2.2.1.Final</version>
+            <!-- This is a compile time only requirement -->
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.logging</groupId>
+            <artifactId>jboss-logging-processor</artifactId>
+            <version>2.2.1.Final</version>
+            <!-- This is a compile time only requirement -->
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>11</source>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!--
+         <profile>
+             <id>i18n</id>
+             <activation>
+                 <property>
+                     <name>i18n</name>
+                 </property>
+             </activation>
+             <build>
+                 <plugins>
+                     <plugin>
+                         <groupId>org.apache.maven.plugins</groupId>
+                         <artifactId>maven-resources-plugin</artifactId>
+                         <version>2.6</version>
+                         <executions>
+                             <execution>
+                                 <id>copy-resources</id>
+                                 <phase>initialize</phase>
+                                 <goals>
+                                     <goal>copy-resources</goal>
+                                 </goals>
+                                 <configuration>
+                                     <outputDirectory>${basedir}/src/main/resources/org/jboss/resteasy/plugins/guice/i18n</outputDirectory>
+                                     <resources>
+                                         <resource>
+                                             <directory>${basedir}/src/test/resources/i18n</directory>
+                                             <includes>
+                                                 <include>*</include>
+                                             </includes>
+                                         </resource>
+                                     </resources>
+                                     <overwrite>true</overwrite>
+                                 </configuration>
+                             </execution>
+                         </executions>
+                     </plugin>
+                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>i18</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <skip>false</skip>
+                                    <reuseForks>false</reuseForks>
+                                    <includes>
+                                        <include>**/I18nTestMessages_*.java</include>
+                                    </includes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                     </plugin>
+                 </plugins>
+             </build>
+         </profile>
+         -->
+    </profiles>
+</project>
