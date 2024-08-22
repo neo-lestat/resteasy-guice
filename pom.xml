@@ -11,12 +11,12 @@
     </parent-->
     <artifactId>resteasy-guice</artifactId>
     <groupId>org.jboss.resteasy</groupId>
-    <version>6.2.4.Final-SNAPSHOT</version>
+    <version>6.2.10.Final-SNAPSHOT</version>
     <name>RESTEasy Guice</name>
     <description/>
 
     <properties>
-        <resteasy.version>6.2.4.Final</resteasy.version>
+        <resteasy.version>6.2.10.Final</resteasy.version>
         <guice.version>7.0.0</guice.version>
         <guava.version>30.1-jre</guava.version>
         <javaeeapi.version>8.0.0</javaeeapi.version>
